@@ -1,11 +1,22 @@
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { HomeScreen } from './src/screens/home';
 import { ProfileScreen } from './src/screens/profile';
+import { RestaurantMenuScreen } from './src/screens/restaurants/menu';
 import './src/styles/global.css';
+
+const Stack = createNativeStackNavigator();
+
+const HomeStackNavigator = () => (
+    <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="RestaurantMenuScreen">
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="RestaurantMenuScreen" component={RestaurantMenuScreen} />
+    </Stack.Navigator>
+);
 
 export default function App() {
     const Tab = createBottomTabNavigator();
@@ -25,11 +36,12 @@ export default function App() {
                 >
                     <Tab.Screen
                         name="Início"
-                        component={HomeScreen}
+                        component={HomeStackNavigator}
                         options={{
                             tabBarIcon: () => <AntDesign name="home" size={24} />,
                         }}
                     />
+
                     <Tab.Screen
                         name="Perfil"
                         component={ProfileScreen}
