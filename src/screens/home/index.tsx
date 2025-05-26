@@ -1,9 +1,10 @@
+import { Navigation } from '@/navigators/types';
 import { useNavigation } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
 import { FlatList, Image, Pressable, Text, View } from 'react-native';
 
 export const HomeScreen = () => {
-    const navigation = useNavigation();
+    const navigation = useNavigation<Navigation>();
     const [restaurants, setRestaurants] = useState([]);
 
     useEffect(() => {

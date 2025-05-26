@@ -1,8 +1,11 @@
+import { Navigation } from '@/navigators/types';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import { Image, Modal, Pressable, Text, View } from 'react-native';
 
 export const RestaurantMenuScreen = () => {
+    const navigation = useNavigation<Navigation>();
     const [visible, setVisible] = useState(false);
 
     return (
@@ -41,7 +44,10 @@ export const RestaurantMenuScreen = () => {
             </View>
 
             <View>
-                <View className="flex-row gap-5 p-3 w-full mt-5 pb-5 border-b border-gray-200">
+                <Pressable
+                    onPress={() => navigation.navigate('ProductDetailsScreen')}
+                    className="flex-row gap-5 p-3 w-full mt-5 pb-5 border-b border-gray-200 active:opacity-50 active:bg-slate-300"
+                >
                     <Image
                         src="https://cdn.pixabay.com/photo/2024/02/26/19/39/monochrome-image-8598798_640.jpg"
                         className="w-[20%] h-auto rounded-lg"
@@ -56,9 +62,12 @@ export const RestaurantMenuScreen = () => {
                             Escondidinho de Caine pra comer bem e encher a pansa
                         </Text>
                     </View>
-                </View>
+                </Pressable>
 
-                <View className="flex-row gap-5 p-3 w-full mt-3">
+                <Pressable
+                    onPress={() => navigation.navigate('ProductDetailsScreen')}
+                    className="flex-row gap-5 p-3 w-full mt-5 pb-5 border-b border-gray-200 active:opacity-50 active:bg-slate-300"
+                >
                     <Image
                         src="https://cdn.pixabay.com/photo/2024/02/26/19/39/monochrome-image-8598798_640.jpg"
                         className="w-[20%] h-auto rounded-lg"
@@ -73,7 +82,7 @@ export const RestaurantMenuScreen = () => {
                             Escondidinho de Caine pra comer bem e encher a pansa
                         </Text>
                     </View>
-                </View>
+                </Pressable>
             </View>
 
             <Modal
