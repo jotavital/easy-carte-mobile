@@ -17,7 +17,7 @@ export const AppTabNavigator = () => {
                 },
                 // headerTransparent: true,
             }}
-            initialRouteName="ProfileScreen"
+            initialRouteName="HomeStackNavigatorScreen"
         >
             <Tab.Screen
                 name="HomeStackNavigatorScreen"

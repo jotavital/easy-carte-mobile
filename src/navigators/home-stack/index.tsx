@@ -8,7 +8,10 @@ export const HomeStackNavigator = () => {
     const Stack = createNativeStackNavigator<HomeStackParamList>();
 
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="HomeScreen">
+        <Stack.Navigator
+            screenOptions={{ headerShown: false }}
+            initialRouteName="ProductDetailsScreen"
+        >
             <Stack.Screen name="HomeScreen" component={HomeScreen} />
             <Stack.Screen name="RestaurantMenuScreen" component={RestaurantMenuScreen} />
             <Stack.Screen name="ProductDetailsScreen" component={ProductDetailsScreen} />
