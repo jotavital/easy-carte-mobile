@@ -9,7 +9,7 @@ export const RestaurantMenuScreen = () => {
     const [visible, setVisible] = useState(false);
 
     return (
-        <View className="p-5 flex gap-5">
+        <View className="p-5 flex gap-5 bg-white min-h-full">
             <View className="items-center">
                 <View className="w-[9rem] h-[9rem]">
                     <Image

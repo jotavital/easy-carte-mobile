@@ -16,6 +16,7 @@ export const AppTabNavigator = () => {
                     color: 'white',
                 },
                 // headerTransparent: true,
+                tabBarActiveTintColor: 'black',
             }}
             initialRouteName="HomeStackNavigatorScreen"
         >
@@ -25,7 +26,7 @@ export const AppTabNavigator = () => {
                 options={{
                     tabBarIcon: () => <AntDesign name="home" size={24} />,
                     tabBarLabel: 'Início',
-                    headerTitle: 'Início',
+                    headerShown: false,
                 }}
             />
 

@@ -22,7 +22,7 @@ export const ProfileScreen = () => {
 
             <View>
                 <Text className="text-3xl text-center max-w-[100%] font-semibold mb-1 text-slate-800">
-                    Joao pedro vital
+                    Nome de Usuário
                 </Text>
             </View>
         </View>

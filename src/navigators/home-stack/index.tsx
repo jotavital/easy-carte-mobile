@@ -9,12 +9,30 @@ export const HomeStackNavigator = () => {
 
     return (
         <Stack.Navigator
-            screenOptions={{ headerShown: false }}
-            initialRouteName="ProductDetailsScreen"
+            screenOptions={{
+                headerStyle: {
+                    backgroundColor: '#f4511e',
+                },
+                headerTitleStyle: {
+                    color: 'white',
+                },
+                headerShown: true,
+                headerBackButtonDisplayMode: 'minimal',
+                headerTintColor: '#fff',
+            }}
+            // initialRouteName="ProductDetailsScreen"
         >
-            <Stack.Screen name="HomeScreen" component={HomeScreen} />
-            <Stack.Screen name="RestaurantMenuScreen" component={RestaurantMenuScreen} />
-            <Stack.Screen name="ProductDetailsScreen" component={ProductDetailsScreen} />
+            <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ title: 'Início' }} />
+            <Stack.Screen
+                name="RestaurantMenuScreen"
+                component={RestaurantMenuScreen}
+                options={{ title: 'Restaurante' }}
+            />
+            <Stack.Screen
+                name="ProductDetailsScreen"
+                component={ProductDetailsScreen}
+                options={{ title: 'Detalhes' }}
+            />
         </Stack.Navigator>
     );
 };
